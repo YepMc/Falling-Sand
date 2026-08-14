@@ -1,10 +1,12 @@
 import pygame, sys
 
+from grid import Grid
 
 pygame.init()
 
 WINDOW_WIDTH = 800 
 WINDOW_HEIGHT = 600
+CELL_SIZE = 20
 FPS = 120
 GREY = (29,29,29)
 
@@ -13,6 +15,7 @@ pygame.display.set_caption("Falling Sand Sim")
 
 clock = pygame.time.Clock()
 
+grid = Grid(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE)
 #Simulation Loop
 
 while True: 
@@ -29,6 +32,6 @@ while True:
 
     #Drawing Grid
     window.fill(GREY)
-    
+    grid.draw(window)
     pygame.display.flip()
     clock.tick(FPS)
