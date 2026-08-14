@@ -1,7 +1,7 @@
 import pygame, sys
 
 from grid import Grid
-
+from particle import SandParticle
 pygame.init()
 
 WINDOW_WIDTH = 800 
@@ -16,6 +16,8 @@ pygame.display.set_caption("Falling Sand Sim")
 clock = pygame.time.Clock()
 
 grid = Grid(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE)
+grid.cells[0][0] = SandParticle()
+grid.cells[25][25] = SandParticle()
 #Simulation Loop
 
 while True: 
