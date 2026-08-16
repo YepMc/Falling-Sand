@@ -17,5 +17,11 @@ class SandParticle():
         if grid.is_cell_empty(row+1, column):
             return row+1, column
         else:
-            return row, column
+            offsets = [-1,1]
+            random.shuffle(offsets)
+            for offset in offsets:
+                new_column = column + offset
+                if grid.is_cell_empty(row+1,new_column):
+                    return row+1, new_column
+        return row, column
         
