@@ -12,4 +12,10 @@ class SandParticle():
         value = random.uniform(0.6,0.8)
         r,g,b = colorsys.hsv_to_rgb(hue,saturation,value)
         return (int(r*255), int(g*255), int(b*255))
-            
+
+    def update(self, grid, row, column):
+        if grid.is_cell_empty(row+1, column):
+            return row+1, column
+        else:
+            return row, column
+        

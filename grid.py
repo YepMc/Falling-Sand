@@ -28,3 +28,20 @@ class Grid:
     def remove_particle(self, row, column):
         if 0 <= row < self.rows and 0 <= column < self.columns:
             self.cells[row][column] = None  
+
+    def is_cell_empty(self, row, column):
+        if 0 <= row < self.rows and 0 <= column < self.columns:
+            if self.cells [row][column] == None:
+                return True
+
+        return False
+
+    def set_cell(self, row, column, particle):
+        if not(0 <= row < self.rows and 0 <= column < self.columns):
+            return
+        self.cells[row][column] = particle
+
+    def get_cell(self, row, column):
+        if 0 <= row < self.rows and 0 <= column < self.columns:
+            return self.cells[row][column]
+        return None

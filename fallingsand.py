@@ -38,7 +38,8 @@ while True:
 
 
 
-    #Updating State
+    #Updating State:
+    simulation.update()
 
 
 
