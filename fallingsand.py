@@ -27,6 +27,17 @@ while True:
             pygame.quit()
             sys.exit()
 
+
+    buttons = pygame.mouse.get_pressed() # gets all pressed mouse inputs every frame
+    if buttons[0]: # buttons[0] indicates that the left mouse input
+        pos = pygame.mouse.get_pos()
+        row = pos[1] // CELL_SIZE
+        column = pos[0] // CELL_SIZE 
+
+        simulation.add_particle(row, column)
+
+
+
     #Updating State
 
 
